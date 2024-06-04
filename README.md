@@ -38,8 +38,4 @@ docker run -it --rm \
 ```
 
 -------------
-For questions please reach out to 
-
-Oleg Ovcharenko: oovcharenko@nvidia.com
-
-Oleg Sudakov: osudakov@nvidia.com
+Prepared by Oleg Ovcharenko and Oleg Sudakov
