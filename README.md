@@ -6,13 +6,21 @@ This repository contains step-by-step instructions on how to generate a syntheti
 1. Register [NVIDIA Developer account](https://developer.nvidia.com/developer-program)
 2. Access [NGC](https://catalog.ngc.nvidia.com/) using your developer account
 3. Create private `NGC_API_KEY` on NGC
-4. Login `docker login nvcr.io` and pull NeMo Framework container 
+4. Login `docker login nvcr.io` and build Docker image 
 ```
-docker pull nvcr.io/ea-bignlp/ga-participants/nemofw-training:24.05
+./scripts/docker/build-docker.sh
+
+# or
+
+docker build -t geo_llm . 
 ```
 
-5. Launch container
+5. Launch container 
 ```
+./scripts/docker/run-docker.sh
+
+# or 
+
 docker run -it --rm \
 	--gpus='"device=0"' \
 	-e NVIDIA_API_KEY=${NVIDIA_API_KEY} \
@@ -32,7 +40,7 @@ docker run -it --rm \
 ./scripts/run-lora-training.sh
 ```
 
-3. Run evaluation with [llm-harness](https://github.com/EleutherAI/lm-evaluation-harness)
+3. Run evaluation (WIP on  [llm-harness](https://github.com/EleutherAI/lm-evaluation-harness))
 ```
 ./scripts/run-evaluation.sh
 ```

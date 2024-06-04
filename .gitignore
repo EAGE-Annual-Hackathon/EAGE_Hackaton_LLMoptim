@@ -175,3 +175,5 @@ models
 *.idx.npy
 *.idx.info
 *.zip
+*.bin
+*.idx
